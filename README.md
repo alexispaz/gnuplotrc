@@ -1,0 +1,2 @@
+# gnuplotrc
+GNUplot configuration files
