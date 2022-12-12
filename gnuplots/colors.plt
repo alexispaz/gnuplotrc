@@ -46,7 +46,10 @@ mix2(c1,p,c2)= '#'.\
                dec2hex(real("0x".substr(c1,2,3))*p+real("0x".substr(c2,2,3))*(1.-p)).\
                dec2hex(real("0x".substr(c1,4,5))*p+real("0x".substr(c2,4,5))*(1.-p)).\
                dec2hex(real("0x".substr(c1,6,7))*p+real("0x".substr(c2,6,7))*(1.-p))
-
+# mix2(c1,p,c2)= <<16+\
+#                <<8+\
+#                
+ 
 # Use as mixb(@Czub51,0.9). Note @ is necesary and there is not warning for that
 mixw(c1,p)= mix2(c1,p,"#FFFFFF")
 mixb(c1,p)= mix2(c1,p,"#000000")
@@ -57,7 +60,12 @@ gamamix2(c1,p,c2,g)= '"#'.\
                dec2hex(real("0x".substr(c1,2,3))*p**g+real("0x".substr(c2,2,3))*(1.-p**g)).\
                dec2hex(real("0x".substr(c1,4,5))*p**g+real("0x".substr(c2,4,5))*(1.-p**g)).\
                dec2hex(real("0x".substr(c1,6,7))*p**g+real("0x".substr(c2,6,7))*(1.-p**g)).'"'
-     
+
+
+# Add transparency to a color in #FFFFFF format
+# a=0 to 255 or 0x00 to 0xff
+transp(c,a) = sprintf("0x%.2x%s",a,c[2:])*1
+                   
 
 # Colors palettes 
 # ===============

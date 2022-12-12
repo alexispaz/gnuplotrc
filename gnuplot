@@ -22,3 +22,7 @@ load 'colors/zub7.plt'  #; default
 load "constants.plt"
 load "functions.plt"
 
+# Templates
+# =========
+
+t1x1='!cp $HOME/.gnuplots/1x1.plt .'
